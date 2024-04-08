@@ -1,0 +1,476 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Exo", sans-serif;
+}
+
+:root {
+  --primary-color: #f3f4f6;
+}
+
+body {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url(./images/backgroundLi.png);
+  background-blend-mode: lighten;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#carList {
+  width: 70%;
+  margin: auto;
+}
+
+h1 {
+  color: #f3f4f6;
+}
+
+header {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+#cars > li {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 70%;
+  margin: auto;
+  padding: 40px 10px 40px 20px;
+  margin-bottom: 15px;
+  position: relative;
+  border-radius: 10px;
+  background: linear-gradient(
+    to bottom right,
+    rgba(116, 0, 0, 1),
+    rgba(43, 0, 0, 1)
+  );
+}
+
+.carData ul {
+  list-style-type: none;
+}
+
+.carData ul li {
+  padding: 2px;
+  font-size: 18px;
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.carData ul li span {
+  color: rgba(255, 156, 156, 0.92);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+img {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carData ul .price {
+  position: absolute;
+  top: 3%;
+  right: 12px;
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(255, 0, 0, 1);
+}
+
+.price .priceNumber {
+  color: rgba(255, 0, 0, 1);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.choice {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: none;
+  background-image: linear-gradient(
+    to top right,
+    rgba(255, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.16)
+  );
+  transition: background-color 0.3s, font-size 0.3s, font-weight 0.3s,
+    color 0.3s, box-shadow 0.3s;
+  font-size: 12px;
+}
+
+.choice:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.8);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 235, 228, 0.83);
+  box-shadow: 1px 1px 10px rgba(255, 235, 228, 0.83);
+}
+
+/* #dropdown {
+  position: absolute;
+  background-color: black;
+  width: 90px;
+  padding: 2px 5px;
+  top: 4.2%;
+  left: 9%;
+  color: white;
+}
+
+#dropdown > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#dropdown > ul {
+  position: absolute;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  padding-top: 5px;
+  background-color: black;
+  color: white;
+  width: 90px;
+  left: 0;
+}
+
+#dropdown ul li {
+  padding: 3px 5px;
+  transition: background-color 0.3s;
+}
+
+#dropdown > div:hover {
+  cursor: pointer;
+}
+
+#dropdown ul li:hover {
+  background-color: rgba(255, 0, 0, 0.8);
+  cursor: pointer;
+} */
+
+.hidden {
+  display: none;
+}
+
+/* .dropdownHidden {
+  opacity: 0;
+}
+
+.filterList {
+  transition: opacity 0.3s;
+} */
+
+#formCar {
+  width: 70%;
+  margin: auto;
+  background-image: linear-gradient(
+    to top right,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.9)
+  );
+  padding: 40px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  box-shadow: rgba(255, 0, 0, 0.4) 0px 13px 27px -5px,
+    rgba(255, 0, 0, 0.4) 0px 8px 16px -8px;
+}
+
+#formUpperSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="radio"]:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+input[type="radio"]:checked {
+  background-image: linear-gradient(
+    to top right,
+    red,
+    rgba(255, 255, 255, 0.9)
+  );
+}
+
+#cashOrLeasing label {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#pickedAuto p {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#pickedAuto p span {
+  color: rgba(255, 0, 0, 1);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#personalData {
+  margin-right: 15px;
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+#personalData form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#personalData :is(label, input, select) {
+  width: 30%;
+  margin-bottom: 5px;
+}
+
+#personalData :is(input, select) {
+  background-image: linear-gradient(
+    to top right,
+    rgba(255, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7)
+  );
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--primary-color);
+}
+
+#pickupPlace {
+  cursor: pointer;
+}
+
+#pickupPlace option {
+  color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#personalData :is(input, select):hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#personalData :is(input, select):focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#additionalAccesories {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  color: var(--primary-color);
+  font-size: 12px;
+  margin-top: 40px;
+  gap: 40px;
+}
+
+#additionalAccesories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#additionalAccesories ul p {
+  margin-bottom: 15px;
+  color: var(--primary-color);
+  font-size: 14px;
+  text-align: center;
+}
+
+#additionalAccesories ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.3);
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  border-radius: 40px;
+  gap: 30px;
+  transition: background-color 0.3s;
+}
+
+#additionalAccesories ul li:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.plus {
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.plus:hover {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+}
+
+.minus {
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgba(255, 0, 0, 0.7);
+}
+
+.minus:hover {
+  font-weight: 700;
+  color: red;
+}
+
+#additionalAccesories #chosenAccesories li {
+  background-color: rgba(0, 255, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+#additionalAccesories #chosenAccesories li:hover {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+#btnOptions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0px 40px;
+}
+
+#btnOptions button {
+  padding: 3px 10px;
+  border: none;
+  border-radius: 15px;
+}
+
+button .fa-solid {
+  margin-right: 5px;
+}
+
+#backBtn {
+  background-image: linear-gradient(
+    to top right,
+    rgba(255, 55, 0, 0.6),
+    rgba(255, 55, 0, 0.3)
+  );
+  color: black;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+#backBtn:hover {
+  background-color: rgba(255, 55, 0, 0.4);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+#buyBtn {
+  background-image: linear-gradient(to top right, rgba(0, 0, 0, 0.35), white);
+  color: black;
+  transition: background-image 0.3s;
+}
+
+#buyBtn:hover {
+  background-image: linear-gradient(
+    to top right,
+    rgba(199, 255, 0, 0.35),
+    white
+  );
+  cursor: pointer;
+}
+
+#thankPage {
+  width: 70%;
+  margin: auto;
+  margin-top: 2%;
+  background-image: linear-gradient(
+    to top right,
+    rgba(0, 0, 0, 0.8),
+    rgba(255, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.8)
+  );
+  padding: 20px;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 24px;
+  position: relative;
+}
+
+#thankPage p {
+  margin-bottom: 24px;
+}
+
+#thankCarName {
+  animation-name: thankAuto;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  font-size: 32px;
+}
+
+#deliveryDate,
+#paymentForm,
+#total {
+  color: goldenrod;
+}
+
+#thankBack {
+  background-image: linear-gradient(
+    to top right,
+    rgba(255, 55, 0, 0.6),
+    rgba(255, 55, 0, 0.3)
+  );
+  color: black;
+  font-size: 12px;
+  transition: background-color 0.3s;
+  position: absolute;
+  left: 5%;
+  bottom: 8%;
+  padding: 5px 15px;
+  border-radius: 15px;
+  border: none;
+}
+
+#thankBack:hover {
+  background-color: rgba(255, 55, 0, 0.4);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+@keyframes thankAuto {
+  0% {
+    color: goldenrod;
+  }
+  50% {
+    color: rgba(255, 255, 255);
+  }
+  100% {
+    color: goldenrod;
+  }
+}

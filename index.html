@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Car List</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/e8a19f0fe4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- <div id="dropdown">
+      <div>
+        <p>Filtruj</p>
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+      <ul class="filterList">
+        <li class="filterAudi">Audi</li>
+        <li class="filterMercedes">Mercedes</li>
+        <li class="filterPorsche">Porsche</li>
+      </ul>
+    </div> -->
+    <div id="carList">
+      <header>
+        <h1>Please choose the car of your dreams!</h1>
+      </header>
+      <ul id="cars">
+        <li class="audi">
+          <div class="carImage"><img src="./images/AudiA3.png" /></div>
+          <div class="carData">
+            <ul>
+              <li class="price"><span class="priceNumber">75 000</span> PLN</li>
+              <li class="brand">Marka: <span class="brandName">Audi</span></li>
+              <li class="model">Model: <span class="modelName">A3 8V</span></li>
+              <li class="productionYear">Rok produkcji: <span>2022</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>150</span></li>
+              <li class="kilometers">Przebieg [km]: <span>45 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="audi">
+          <div class="carImage"><img src="./images/Audia4b8.png" /></div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">82 000</span>
+                PLN
+              </li>
+              <li class="brand">Marka: <span class="brandName">Audi</span></li>
+              <li class="model">Model: <span class="modelName">A4 B8</span></li>
+              <li class="productionYear">Rok produkcji: <span>2021</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>170</span></li>
+              <li class="kilometers">Przebieg [km]: <span>82 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="audi">
+          <div class="carImage">
+            <img src="./images/audi_a7_avant-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">450 000</span> PLN
+              </li>
+              <li class="brand">Marka: <span class="brandName">Audi</span></li>
+              <li class="model">
+                Model: <span class="modelName">A7 Avant</span>
+              </li>
+              <li class="productionYear">Rok produkcji: <span>2023</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>306</span></li>
+              <li class="kilometers">Przebieg [km]: <span>30 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="audi">
+          <div class="carImage">
+            <img src="./images/audi_etron_gt-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">800 000</span> PLN
+              </li>
+              <li class="brand">Marka: <span class="brandName">Audi</span></li>
+              <li class="model">
+                Model: <span class="modelName">E-tron</span>
+              </li>
+              <li class="productionYear">Rok produkcji: <span>2023</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>350</span></li>
+              <li class="kilometers">Przebieg [km]: <span>25 000</span></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="audi">
+          <div class="carImage">
+            <img src="./images/audi_q7-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">350 000</span> PLN
+              </li>
+              <li class="brand">Marka: <span class="brandName">Audi</span></li>
+              <li class="model">Model: <span class="modelName">Q7</span></li>
+              <li class="productionYear">Rok produkcji: <span>2022</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>400</span></li>
+              <li class="kilometers">Przebieg [km]: <span>85 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="mercedes">
+          <div class="carImage">
+            <img src="./images/mercedes_cla_45_amg-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">200 000</span> PLN
+              </li>
+              <li class="brand">
+                Marka: <span class="brandName">Mercedes</span>
+              </li>
+              <li class="model">
+                Model: <span class="modelName">CLA 45 AMG</span>
+              </li>
+              <li class="productionYear">Rok produkcji: <span>2021</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>420</span></li>
+              <li class="kilometers">Przebieg [km]: <span>65 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="mercedes">
+          <div class="carImage">
+            <img src="./images/mercedes_glc-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">450 000</span> PLN
+              </li>
+              <li class="brand">
+                Marka: <span class="brandName">Mercedes</span>
+              </li>
+              <li class="model">Model: <span class="modelName">GLC</span></li>
+              <li class="productionYear">Rok produkcji: <span>2022</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>400</span></li>
+              <li class="kilometers">Przebieg [km]: <span>45 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="mercedes">
+          <div class="carImage">
+            <img src="./images/mercedes_s_klasa-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">850 000</span> PLN
+              </li>
+              <li class="brand">
+                Marka: <span class="brandName">Mercedes</span>
+              </li>
+              <li class="model">
+                Model: <span class="modelName">S-klasa</span>
+              </li>
+              <li class="productionYear">Rok produkcji: <span>2023</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>600</span></li>
+              <li class="kilometers">Przebieg [km]: <span>30 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="porsche">
+          <div class="carImage">
+            <img src="./images/porsche_911_turbo_s-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">990 000</span> PLN
+              </li>
+              <li class="brand">
+                Marka: <span class="brandName">Porsche</span>
+              </li>
+              <li class="model">
+                Model: <span class="modelName">911 Turbo S</span>
+              </li>
+              <li class="productionYear">Rok produkcji: <span>2023</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>700</span></li>
+              <li class="kilometers">Przebieg [km]: <span>12 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="porsche">
+          <div class="carImage">
+            <img
+              src="./images/Porsche_Cayenne_S_IMG_0627-removebg-preview.png"
+            />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">650 000</span> PLN
+              </li>
+              <li class="brand">
+                Marka: <span class="brandName">Porsche</span>
+              </li>
+              <li class="model">
+                Model: <span class="modelName">Cayenne</span>
+              </li>
+              <li class="productionYear">Rok produkcji: <span>2022</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>600</span></li>
+              <li class="kilometers">Przebieg [km]: <span>40 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="porsche">
+          <div class="carImage">
+            <img src="./images/porsche_macan-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">700 000</span> PLN
+              </li>
+              <li class="brand">
+                Marka: <span class="brandName">Porsche</span>
+              </li>
+              <li class="model">Model: <span class="modelName">Macan</span></li>
+              <li class="productionYear">Rok produkcji: <span>2021</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>500</span></li>
+              <li class="kilometers">Przebieg [km]: <span>35 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+        <li class="porsche">
+          <div class="carImage">
+            <img src="./images/porsche_panamera-removebg-preview.png" />
+          </div>
+          <div class="carData">
+            <ul>
+              <li class="price">
+                <span class="priceNumber">720 000</span> PLN
+              </li>
+              <li class="brand">
+                Marka: <span class="brandName">Porsche</span>
+              </li>
+              <li class="model">
+                Model: <span class="modelName">Panamera GTS</span>
+              </li>
+              <li class="productionYear">Rok produkcji: <span>2022</span></li>
+              <li class="enginePower">Moc silnika [KM]: <span>690</span></li>
+              <li class="kilometers">Przebieg [km]: <span>60 000</span></li>
+              <li></li>
+            </ul>
+            <button class="choice">Wybierz</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="formCar" class="hidden">
+      <div id="formUpperSection">
+        <form id="cashOrLeasing">
+          <input
+            type="radio"
+            id="leasing"
+            name="paymentOption"
+            value="Leasing"
+          />
+          <label for="leasing">Leasing</label><br />
+          <input
+            type="radio"
+            id="cash"
+            name="paymentOption"
+            value="cash"
+            checked
+          />
+          <label for="cash">Gotówka</label>
+        </form>
+        <div id="pickedAuto">
+          <p>Cena całkowita [PLN]: <span id="totalPrice"></span></p>
+          <p>Wybrany samochód: <span id="carName"></span></p>
+        </div>
+      </div>
+      <div id="personalData">
+        <form>
+          <label for="nameSurname">Imię i nazwisko: </label>
+          <input type="text" id="nameSurname" required /><br />
+          <label for="pickupPlace">Miejsce odbioru: </label>
+          <select id="pickupPlace" name="pickupPlace" required>
+            <option value="Warszawa">Warszawa</option>
+            <option value="Poznań">Poznań</option>
+            <option value="Wrocław">Wrocław</option>
+            <option value="Gdańsk">Gdańsk</option>
+            <option value="Kraków">Kraków</option></select
+          ><br />
+          <label for="pickupDate">Data odbioru: </label>
+          <input type="date" id="pickupDate" required />
+        </form>
+      </div>
+      <div id="additionalAccesories">
+        <ul id="toChoseAccesories">
+          <p>Dodatkowe akcesoria</p>
+          <li class="toAddAcc">
+            <div>
+              Dodatkowy zestaw opon <span class="accPrice">3500</span> PLN
+            </div>
+            <div class="plus">+</div>
+          </li>
+          <li class="toAddAcc">
+            <div>
+              Dodatkowe ubezpieczenie: <span class="accPrice">6000</span> PLN
+            </div>
+            <div class="plus">+</div>
+          </li>
+          <li class="toAddAcc">
+            <div>
+              Dodatkowy zestaw głośników:
+              <span class="accPrice">3000</span> PLN
+            </div>
+            <div class="plus">+</div>
+          </li>
+          <li class="toAddAcc">
+            <div>
+              Powłoka ceramiczna: <span class="accPrice">2500</span> PLN
+            </div>
+            <div class="plus">+</div>
+          </li>
+        </ul>
+        <ul id="chosenAccesories">
+          <p>Twoje wybory</p>
+        </ul>
+      </div>
+      <div id="btnOptions">
+        <button type="button" id="backBtn">
+          <i class="fa-solid fa-arrow-left"></i>Wróć do wyboru
+        </button>
+        <button type="button" id="buyBtn">
+          <i class="fa-solid fa-cart-shopping"></i>Zakup
+        </button>
+      </div>
+    </div>
+    <div id="thankPage" class="hidden">
+      <p>
+        Dziękujemy za zakup samochodu
+        <span id="thankCarName"></span>
+      </p>
+      <p>
+        Twoje auto zostanie dostarczone dnia
+        <span id="deliveryDate"></span>
+      </p>
+      <p>Cena całkowita auta [zł]: <span id="total"></span></p>
+      <p>Forma płatności: <span id="paymentForm"></span></p>
+      <img id="thankImg" src="./images/audi_etron_gt-removebg-preview.png" />
+      <button type="button" id="thankBack">Wróć</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

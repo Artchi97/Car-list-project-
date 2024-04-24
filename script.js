@@ -20,23 +20,37 @@ let originalPrice;
 
 // Functions
 
+window.onload = function () {
+  const values = JSON.parse(localStorage.getItem("formData"));
+
+  nameInput.value = values.nameSurname;
+  pickupPlaceInput.value = values.pickupPlace;
+  pickupDateInput.value = values.pickupDate;
+
+  if (values.paymentOption === "Leasing") {
+    leasingBtn.checked = true;
+  } else if (values.paymentOption === "cash") {
+    cashBtn.checked === true;
+  }
+};
+
 const carChoice = (button) => {
   carList.classList.add("hidden");
   formCar.classList.remove("hidden");
-  let carData = button.closest(".carData");
-  let priceElement = carData.querySelector(".priceNumber");
-  let brandEl = carData.querySelector(".brandName");
-  let modelEl = carData.querySelector(".modelName");
-  let brandCar = brandEl.textContent;
-  let modelCar = modelEl.textContent;
-  let carPrice = priceElement.textContent;
+  const carData = button.closest(".carData");
+  const priceElement = carData.querySelector(".priceNumber");
+  const brandEl = carData.querySelector(".brandName");
+  const modelEl = carData.querySelector(".modelName");
+  const brandCar = brandEl.textContent;
+  const modelCar = modelEl.textContent;
+  const carPrice = priceElement.textContent;
   priceInForm.textContent = carPrice.replace(" ", "");
   carNameInForm.textContent = `${brandCar} ${modelCar}`;
 
   originalPrice = parseFloat(carPrice.replace(/\s/g, "").replace(",", "."));
 
-  let carListItem = button.closest("li");
-  let carImage = carListItem.querySelector(".carImage img");
+  const carListItem = button.closest("li");
+  const carImage = carListItem.querySelector(".carImage img");
   thankImg.src = carImage.src;
 };
 
@@ -57,11 +71,17 @@ function weekend() {
 const formValidation = () => {
   const regex = /^[a-zA-Z]+\s[a-zA-Z]+$/;
 
-  if (!nameInput.value.match(regex) || !pickupDateInput.value) {
-    alert("Wypełnij poprawnie pola!");
+  if (!nameInput.value.match(regex) && !pickupDateInput.value) {
+    alert("Wypełnij poprawnie imię i nazwisko oraz wybierz datę odbioru!");
+  } else if (!nameInput.value.match(regex)) {
+    alert("Wypełnij poprawnie imię i nazwisko!");
+  } else if (!pickupDateInput.value) {
+    alert("Wybierz datę odbioru!");
   } else {
     formCar.classList.add("hidden");
     thankPage.classList.remove("hidden");
+
+    localStorage.removeItem("formData");
   }
 
   dataInThankDiv();
@@ -153,6 +173,17 @@ const backToData = () => {
   formCar.classList.remove("hidden");
 };
 
+const saveFormData = () => {
+  const formData = {
+    nameSurname: nameInput.value,
+    pickupPlace: pickupPlaceInput.value,
+    pickupDate: pickupDateInput.value,
+    paymentOption: leasingBtn.checked ? "Leasing" : "cash",
+  };
+
+  localStorage.setItem("formData", JSON.stringify(formData));
+};
+
 // Events
 
 choiceBtn.forEach((button) => {
@@ -183,3 +214,9 @@ leasingBtn.addEventListener("change", updateAndClear);
 cashBtn.addEventListener("change", updateAndClear);
 
 thankBackBtn.addEventListener("click", backToData);
+
+nameInput.addEventListener("input", saveFormData);
+pickupPlaceInput.addEventListener("change", saveFormData);
+pickupDateInput.addEventListener("change", saveFormData);
+leasingBtn.addEventListener("change", saveFormData);
+cashBtn.addEventListener("change", saveFormData);
